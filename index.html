@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orientation Post-Bac</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Orientation Post-Bac</h1>
+
+        <label for="serie">Sélectionnez votre série du Bac :</label>
+        <select id="serie" onchange="updateSubjects()">
+            <option value="">-- Sélectionnez --</option>
+            <option value="C">Série C</option>
+            <option value="D">Série D</option>
+            <option value="A1">Série A1</option>
+            <option value="A2">Série A2</option>
+            <option value="B">Série B</option>
+            <option value="G2">Série G2</option>
+        </select>
+
+        <div id="subjects-container"></div>
+
+        <button onclick="calculateOrientation()">Calculer mon orientation</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
