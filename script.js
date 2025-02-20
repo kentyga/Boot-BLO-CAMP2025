@@ -52,20 +52,7 @@ const coefficients = {
   },
 };
 
-const faculties = [
-  { name: "Faculté des Sciences et Techniques (FAST)", minScore: 14 },
-  { name: "École Polytechnique d'Abomey-Calavi (EPAC)", minScore: 13 },
-  {
-    name: "Faculté des Sciences Économiques et de Gestion (FASEG)",
-    minScore: 12,
-  },
-  {
-    name: "Faculté des Lettres, Arts et Sciences Humaines (FLASH)",
-    minScore: 11,
-  },
-  { name: "Institut National Médico-Sanitaire (INMeS)", minScore: 15 },
-  { name: "École Normale Supérieure (ENS)", minScore: 13.5 },
-];
+
 
 function updateSubjects() {
   const serie = document.getElementById("serie").value;
@@ -98,8 +85,8 @@ const fields = [
     series: ["D", "C"],
   },
   {
-    name: "Genie logiciel",
-    matieres: ["Maths", "Anglais", "PCT"],
+    name: "Comptabilité",
+    matieres: ["Maths", "Francais", "Eco"],
     series: ["B"],
   },
   {
@@ -182,22 +169,6 @@ function calculateOrientation() {
   const averages = calculateFieldAverages(serie, notes);
   displayResults(averages);
 }
-
-/* function displayResults(average) {
-  const recommendedFaculties = faculties
-    .filter((faculty) => average >= faculty.minScore)
-    .sort((a, b) => b.minScore - a.minScore)
-    .slice(0, 3);
-
-  let resultHTML = "<h3>Facultés recommandées :</h3>";
-  recommendedFaculties.forEach((faculty, index) => {
-    resultHTML += `<p>${index + 1}. ${faculty.name} - Moyenne requise : ${
-      faculty.minScore
-    }</p>`;
-  });
-
-  document.getElementById("result").innerHTML = resultHTML;
-} */
 
 function displayResults(averages) {
   const resultsContainer = document.getElementById("result");
